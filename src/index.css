@@ -56,3 +56,32 @@ h1, h4 {
   background-color: #A6634B !important; 
   color: #F2F2F2 !important;            
 }
+/* --- Estilos de la Página de Inicio --- */
+
+.hero-section {
+  /* Asegúrate de tener esta imagen en public/img/ */
+  background: url('/img/fondo_cafe.jpg') center/cover no-repeat;
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+  box-shadow: inset 0 0 0 2000px rgba(38, 25, 20, 0.6);
+  margin-bottom: 3rem;
+}
+
+.home-card {
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.home-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.home-card img {
+  height: 220px;
+  object-fit: cover;
+}

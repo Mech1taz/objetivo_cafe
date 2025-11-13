@@ -1,3 +1,4 @@
+// src/types.ts
 export type ProductType = 'cafe' | 'cafetera' | 'accesorio';
 
 export interface Product {
@@ -7,18 +8,15 @@ export interface Product {
     tipo: ProductType;
     opciones: string[];
     imagen: string;
-    descripcion?: string;
+    descripcion?: string;      // Descripción corta (para el catálogo)
+    
+    // NUEVOS CAMPOS:
+    descripcionLarga?: string; // Párrafo detallado (para la página de detalle)
+    notas?: string;            // Ej: "Cacao, naranja, nueces"
 }
 
 export interface CartItem {
     product: Product;
     opcionSeleccionada: string;
     cantidad: number;
-}
-// src/types.ts
-export interface User {
-    nombre: string;
-    email: string;
-    password: string;
-    rut?: string; // Nuevo campo opcional
 }

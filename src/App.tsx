@@ -15,6 +15,7 @@ import { PaginaMetodos } from './pages/PaginaMetodos';
 import { PaginaLogin } from './pages/PaginaLogin';
 import { PaginaRegistro } from './pages/PaginaRegistro';
 import { PaginaUsuario } from './pages/PaginaUsuario';
+import { HomePage } from './pages/HomePage';
 
 // --- Páginas de Administración ---
 import { AdminResumen } from './pages/Admin/AdminResumen';
@@ -29,6 +30,8 @@ const App: React.FC = () => {
         
         {/* 🏠 RUTAS PÚBLICAS (Usan MainLayout con Navbar superior) */}
         <Route path="/" element={<LayoutPrincipal />}>
+          <Route index element={<HomePage />} />
+          <Route path="cafes" element={<PaginaCatalogo tipo="cafe" />} />
           {/* Portada: Muestra el catálogo de cafés por defecto */}
           <Route index element={<PaginaCatalogo tipo="cafe" />} />
           
@@ -50,9 +53,8 @@ const App: React.FC = () => {
           <Route path="usuario" element={<PaginaUsuario />} />
         </Route>
 
-        {/* 🔐 RUTAS DE ADMINISTRACIÓN (Usan AdminLayout con Barra Lateral) */}
         <Route path="/admin" element={<AdminLayout />}>
-          <Route index element={<AdminResumen />} /> {/* /admin lleva al resumen */}
+          <Route index element={<AdminResumen />} /> 
           <Route path="resumen" element={<AdminResumen />} />
           <Route path="productos" element={<AdminProductos />} />
           <Route path="usuarios" element={<AdminUsuarios />} />
