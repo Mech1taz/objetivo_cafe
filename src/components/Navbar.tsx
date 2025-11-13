@@ -1,18 +1,18 @@
 import React from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useCart } from '../hooks/useCart';
-import { useAuth } from '../hooks/useAuth'; // Importamos el hook de autenticación
+import { useAuth } from '../hooks/useAuth'; 
 
 export const Navbar: React.FC = () => {
     const { cart } = useCart();
-    const { user, logout } = useAuth(); // Obtenemos el usuario y la función logout
+    const { user, logout } = useAuth(); 
     const navigate = useNavigate();
 
     const totalItems = cart.reduce((total, item) => total + item.cantidad, 0);
 
     const handleLogout = () => {
         logout();
-        navigate('/'); // Al salir, te manda al inicio
+        navigate('/'); 
     };
 
     return (
@@ -25,7 +25,6 @@ export const Navbar: React.FC = () => {
                 </button>
                 
                 <div className="collapse navbar-collapse" id="collapsibleNavbar">
-                    {/* Menú Izquierdo (Catálogo) */}
                     <ul className="navbar-nav me-auto">
                         <li className="nav-item"><NavLink className="nav-link" to="/cafes">Café</NavLink></li>
                         <li className="nav-item"><NavLink className="nav-link" to="/cafeteras">Cafeteras</NavLink></li>
@@ -33,10 +32,8 @@ export const Navbar: React.FC = () => {
                         <li className="nav-item"><NavLink className="nav-link" to="/metodos">Guía</NavLink></li>
                     </ul>
 
-                    {/* Menú Derecho (Carrito y Usuario) */}
                     <ul className="navbar-nav align-items-center">
                         
-                        {/* 1. Carrito */}
                         <li className="nav-item me-3">
                             <NavLink className="nav-link position-relative" to="/carrito">
                                 <i className="fas fa-shopping-cart"></i> Carrito
@@ -48,9 +45,7 @@ export const Navbar: React.FC = () => {
                             </NavLink>
                         </li>
 
-                        {/* 2. Lógica de Usuario (Cambia si estás logueado) */}
                         {user ? (
-                            // SI HAY USUARIO: Mostrar Dropdown con Nombre
                             <li className="nav-item dropdown">
                                 <a 
                                     className="nav-link dropdown-toggle active text-warning" 
@@ -72,7 +67,6 @@ export const Navbar: React.FC = () => {
                                 </ul>
                             </li>
                         ) : (
-                            // NO HAY USUARIO: Mostrar botón Iniciar Sesión
                             <li className="nav-item">
                                 <Link className="nav-link" to="/login">
                                     <i className="fas fa-user"></i> Iniciar Sesión

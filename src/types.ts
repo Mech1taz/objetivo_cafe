@@ -20,3 +20,9 @@ export interface CartItem {
     opcionSeleccionada: string;
     cantidad: number;
 }
+export interface User {
+    nombre: string;
+    email: string;
+    password: string;
+    rut?: string; // Opcional
+}

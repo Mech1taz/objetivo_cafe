@@ -51,7 +51,7 @@ export const HomePage: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* 4. Guías (Blog) */}
+
                     <div className="col-md-3">
                         <div className="card home-card shadow h-100">
                             {/* Asegúrate de tener una imagen para esto, o usa una genérica */}
