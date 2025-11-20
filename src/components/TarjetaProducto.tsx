@@ -16,18 +16,20 @@ export const TarjetaProducto: React.FC<Props> = ({ producto }) => {
                     className="card-img-top"
                     alt={producto.nombre}
                     style={{
-                        height: '250px',      
+                        height: '220px',      
                         objectFit: 'cover',   
                         width: '100%'         
                     }}
                 />
 
                 <div className="card-body d-flex flex-column text-center"> 
+                    
+                    
+                    <h4 className="card-title">{producto.nombre}</h4>
+
                     <h4 className="mt-auto fw-bold" style={{ color: '#A6634B' }}>
                         ${precioDisplay}
                     </h4>
-
-                    
 
                     <p className="card-text flex-grow-1">
                         {producto.descripcion || 'Café de especialidad.'}
